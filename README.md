@@ -22,13 +22,14 @@ Anywhere in your code you can create a new action like so:
 do_action($tag, ...$args)
 ```
 
-/**
+```
  * TAD CMS: Do action hook
  * @param string $tag Action / Hook name (E.x: my.hook)
  * @param mixed ...$args Additional parameters to pass to the callback functions.
  * @return void
- * */
+```
 
+Add action
 ```
 add_action($tag, $callback, $priority = 20, $arguments = 1)
 ```
@@ -46,10 +47,12 @@ add_action($tag, $callback, $priority = 20, $arguments = 1)
  * @return void
 ```
 
+Apply filters
 ```
 apply_filters($tag, $value, ...$args)
 ```
 
+Add filters
 ```
  * TAD CMS: Apply filters to value
  * @param string $tag The name of the filter hook.
@@ -58,9 +61,9 @@ apply_filters($tag, $value, ...$args)
  * @return mixed The filtered value after all hooked functions are applied to it.
 ```
 
- ```
- add_filters($tag, $callback, $priority = 20, $arguments = 1)
- ```
+```
+add_filters($tag, $callback, $priority = 20, $arguments = 1)
+```
 
 ```
   * @param string $tag The name of the filter to hook the $function_to_add callback to.
