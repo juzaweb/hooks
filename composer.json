@@ -1,6 +1,6 @@
 {
     "name": "theanh/laravel-hooks",
-    "description": "laravel hooks",
+    "description": "Add Actions and filters in Laravel like WordPress.",
     "keywords": [
         "laravel hooks",
         "hooks laravel",
