@@ -12,7 +12,7 @@ If you're using Laravel 5.5 or later you can start using the package at this poi
 - For Laravel < 5.5
 Add the service provider to the providers array in your ``config/app.php``.
 ```
-'Theanh\LaravelHooks\HookBladeServiceProvider',
+'Theanh\LaravelHooks\LaravelHooksServiceProvider',
 ```
 
 ## Usage
