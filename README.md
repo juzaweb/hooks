@@ -52,7 +52,6 @@ Apply filters
 apply_filters($tag, $value, ...$args)
 ```
 
-Add filters
 ```
  * TAD CMS: Apply filters to value
  * @param string $tag The name of the filter hook.
@@ -61,6 +60,7 @@ Add filters
  * @return mixed The filtered value after all hooked functions are applied to it.
 ```
 
+Add filters
 ```
 add_filters($tag, $callback, $priority = 20, $arguments = 1)
 ```
