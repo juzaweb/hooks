@@ -80,9 +80,11 @@ add_filters($tag, $callback, $priority = 20, $arguments = 1)
 
 ## Using in Blade
 Adding the same action as the one in the action example above:
-
+```
 @do_action('my.hook', $user)
+```
 
 Adding the same filter as the one in the filter example above:
-
+```
 You are @apply_filters('my.hook', 'awesome')
+```
