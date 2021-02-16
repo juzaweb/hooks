@@ -27,6 +27,6 @@ class LaravelHooksServiceProvider extends ServiceProvider
     }
     
     protected function registerServiceProvider() {
-    
+        $this->app->register(HookBladeServiceProvider::class);
     }
 }
