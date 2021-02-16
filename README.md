@@ -29,6 +29,7 @@ do_action($tag, ...$args)
 ```
 
 Add action
+To listen to your hooks, you attach listeners. These are best added to your ``AppServiceProvider boot()`` method.
 ```
 add_action($tag, $callback, $priority = 20, $arguments = 1)
 ```
@@ -60,6 +61,7 @@ apply_filters($tag, $value, ...$args)
 ```
 
 Add filters
+To listen to your hooks, you attach listeners. These are best added to your ``AppServiceProvider boot()`` method.
 ```
 add_filters($tag, $callback, $priority = 20, $arguments = 1)
 ```
@@ -75,3 +77,12 @@ add_filters($tag, $callback, $priority = 20, $arguments = 1)
   * @param int $arguments   Optional. The number of arguments the function accepts. Default 1.
   * @return bool
 ```
+
+## Using in Blade
+Adding the same action as the one in the action example above:
+
+@do_action('my.hook', $user)
+
+Adding the same filter as the one in the filter example above:
+
+You are @apply_filters('my.hook', 'awesome')
