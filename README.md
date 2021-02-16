@@ -33,7 +33,7 @@ do_action($tag, ...$args)
 add_action($tag, $callback, $priority = 20, $arguments = 1)
 ```
 
-/**
+```
  * Add action to hook
  * @param string $tag The name of the filter to hook the $function_to_add callback to.
  * @param callable $callback The callback to be run when the filter is applied.
@@ -44,25 +44,25 @@ add_action($tag, $callback, $priority = 20, $arguments = 1)
  *                                  in the order in which they were added to the action. Default 20.
  * @param int $arguments Optional. The number of arguments the function accepts. Default 1.
  * @return void
- */
+```
 
 ```
 apply_filters($tag, $value, ...$args)
 ```
 
-/**
+```
  * TAD CMS: Apply filters to value
  * @param string $tag The name of the filter hook.
  * @param mixed  $value The value to filter.
  * @param mixed  ...$args Additional parameters to pass to the callback functions.
  * @return mixed The filtered value after all hooked functions are applied to it.
- */
+```
 
  ```
  add_filters($tag, $callback, $priority = 20, $arguments = 1)
  ```
 
-/**
+```
   * @param string $tag The name of the filter to hook the $function_to_add callback to.
   * @param callable $callback The callback to be run when the filter is applied.
   * @param int $priority Optional. Used to specify the order in which the functions
@@ -72,4 +72,4 @@ apply_filters($tag, $value, ...$args)
   *                                  in the order in which they were added to the action. Default 20.
   * @param int $arguments   Optional. The number of arguments the function accepts. Default 1.
   * @return bool
-  */
+```
