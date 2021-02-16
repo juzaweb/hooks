@@ -1,0 +1,38 @@
+{
+    "name": "theanh/laravel-hooks",
+    "description": "laravel hooks",
+    "keywords": [
+        "laravel hooks",
+        "hooks laravel",
+        "hooks laravel like wordpress",
+        "hooks for laravel"
+    ],
+    "license": "MIT",
+    "authors": [
+        {
+          "name": "The Anh Dang",
+          "email": "dangtheanh16@gmail.com",
+          "homepage": "https://www.facebook.com/TheAnhDang.1996/",
+          "role": "Developer"
+        }
+    ],
+    "require": {
+        "php": ">=7.2"
+    },
+    "require-dev": {
+      "laravel/laravel": "^6.0 | ^7.0 | ^8.0",
+      "phpunit/phpunit": "6.0 | 7.0 | 7.5 | 8.4 | ^8.5 | ^9.3"
+    },
+    "autoload": {
+        "psr-4": {
+          "Theanh\\LaravelHooks\\": "src/"
+        }
+    },
+    "extra": {
+      "laravel": {
+        "providers": [
+          "Theanh\\LaravelHooks\\LaravelHooksServiceProvider"
+        ]
+      }
+    }
+}
