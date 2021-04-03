@@ -20,10 +20,7 @@ class LaravelHooksServiceProvider extends ServiceProvider
         });
         
         // Register service providers
-        //$this->registerServiceProvider();
-        
-        // Register helper file
-        require_once(__DIR__ . '/Helpers/helpers.php');
+        $this->registerServiceProvider();
     }
     
     protected function registerServiceProvider() {

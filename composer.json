@@ -28,7 +28,10 @@
     "autoload": {
         "psr-4": {
           "Theanh\\LaravelHooks\\": "src/"
-        }
+        },
+        "files": [
+            "src/Helpers/helpers.php"
+        ]
     },
     "extra": {
       "laravel": {
