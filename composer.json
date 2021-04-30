@@ -1,5 +1,6 @@
 {
     "name": "tadcms/hooks",
+    "version": "1.0.1",
     "description": "Add Actions and filters in Laravel like WordPress.",
     "keywords": [
         "laravel hooks",
