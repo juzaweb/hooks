@@ -1,6 +1,6 @@
 <?php
 
-namespace Theanh\LaravelHooks\Hooks;
+namespace Tadcms\Hooks\Hooks;
 
 abstract class Event
 {

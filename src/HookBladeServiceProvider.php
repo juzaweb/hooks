@@ -1,6 +1,6 @@
 <?php
 
-namespace Theanh\LaravelHooks;
+namespace Tadcms\Hooks;
 
 use Illuminate\Support\Facades\Blade;
 use Illuminate\Support\ServiceProvider;

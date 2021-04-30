@@ -1,5 +1,5 @@
 {
-    "name": "theanh/laravel-hooks",
+    "name": "tadcms/hooks",
     "description": "Add Actions and filters in Laravel like WordPress.",
     "keywords": [
         "laravel hooks",
@@ -12,8 +12,7 @@
         {
           "name": "The Anh Dang",
           "email": "dangtheanh16@gmail.com",
-          "homepage": "https://www.facebook.com/TheAnhDang.1996/",
-          "role": "Developer"
+          "homepage": "https://www.facebook.com/TheAnhDang.1996/"
         }
     ],
     "require": {
@@ -27,7 +26,7 @@
     },
     "autoload": {
         "psr-4": {
-          "Theanh\\LaravelHooks\\": "src/"
+          "Tadcms\\Hooks\\": "src/"
         },
         "files": [
             "src/Helpers/helpers.php"
@@ -36,7 +35,7 @@
     "extra": {
       "laravel": {
         "providers": [
-          "Theanh\\LaravelHooks\\LaravelHooksServiceProvider"
+          "Tadcms\\Hooks\\HooksServiceProvider"
         ]
       }
     }

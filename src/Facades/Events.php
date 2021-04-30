@@ -1,6 +1,6 @@
 <?php
 
-namespace Theanh\LaravelHooks\Facades;
+namespace Tadcms\Hooks\Facades;
 
 class Events extends Eventy
 {

@@ -1,6 +1,6 @@
 <?php
 
-use Theanh\LaravelHooks\Facades\Events as Hook;
+use Tadcms\Hooks\Facades\Events as Hook;
 
 /**
  * TAD CMS: Do action hook

@@ -1,17 +1,12 @@
 <?php
 
-namespace Theanh\LaravelHooks;
+namespace Tadcms\Hooks;
 
 use Illuminate\Support\ServiceProvider;
-use Theanh\LaravelHooks\Hooks\Events;
+use Tadcms\Hooks\Hooks\Events;
 
-class LaravelHooksServiceProvider extends ServiceProvider
+class HooksServiceProvider extends ServiceProvider
 {
-    public function boot()
-    {
-    
-    }
-    
     public function register()
     {
         // Registers the eventy singleton.
@@ -20,10 +15,6 @@ class LaravelHooksServiceProvider extends ServiceProvider
         });
         
         // Register service providers
-        $this->registerServiceProvider();
-    }
-    
-    protected function registerServiceProvider() {
         $this->app->register(HookBladeServiceProvider::class);
     }
 }

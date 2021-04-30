@@ -1,6 +1,6 @@
 <?php
 
-namespace Theanh\LaravelHooks\Facades;
+namespace Tadcms\Hooks\Facades;
 
 use Illuminate\Support\Facades\Facade;
 

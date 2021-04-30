@@ -1,20 +1,20 @@
 <?php
 
-namespace Theanh\LaravelHooks\Hooks;
+namespace Tadcms\Hooks\Hooks;
 
 class Events
 {
     /**
      * Holds all registered actions.
      *
-     * @var \Theanh\LaravelHooks\Hooks\Action
+     * @var \Tadcms\Hooks\Hooks\Action
      */
     protected $action;
 
     /**
      * Holds all registered filters.
      *
-     * @var \Theanh\LaravelHooks\Hooks\Filter
+     * @var \Tadcms\Hooks\Hooks\Filter
      */
     protected $filter;
 
@@ -30,7 +30,7 @@ class Events
     /**
      * Get the action instance.
      *
-     * @return \Theanh\LaravelHooks\Hooks\Action
+     * @return \Tadcms\Hooks\Hooks\Action
      */
     public function getAction()
     {
@@ -40,7 +40,7 @@ class Events
     /**
      * Get the action instance.
      *
-     * @return \Theanh\LaravelHooks\Hooks\Filter
+     * @return \Tadcms\Hooks\Hooks\Filter
      */
     public function getFilter()
     {
