@@ -4,7 +4,7 @@ Add Actions and filters in Laravel like WordPress.
 ## Installation
 - Install using Composer
 ```
-composer require tadcms/hooks
+composer require juzaweb/hooks
 ```
 
 If you're using Laravel 5.5 or later you can start using the package at this point. Eventy is auto-discovered by the Laravel framework.
