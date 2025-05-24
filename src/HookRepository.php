@@ -1,22 +1,24 @@
 <?php
 
-namespace Tadcms\Hooks\Hooks;
+namespace Juzaweb\Hooks;
 
-class Events
+use Juzaweb\Hooks\Contracts\Hook;
+
+class HookRepository implements Hook
 {
     /**
      * Holds all registered actions.
      *
-     * @var \Tadcms\Hooks\Hooks\Action
+     * @var \Juzaweb\Hooks\Action
      */
-    protected $action;
+    protected Action $action;
 
     /**
      * Holds all registered filters.
      *
-     * @var \Tadcms\Hooks\Hooks\Filter
+     * @var \Juzaweb\Hooks\Filter
      */
-    protected $filter;
+    protected Filter $filter;
 
     /**
      * Construct the class.
@@ -30,9 +32,9 @@ class Events
     /**
      * Get the action instance.
      *
-     * @return \Tadcms\Hooks\Hooks\Action
+     * @return \Juzaweb\Hooks\Action
      */
-    public function getAction()
+    public function getAction(): Action
     {
         return $this->action;
     }
@@ -40,9 +42,9 @@ class Events
     /**
      * Get the action instance.
      *
-     * @return \Tadcms\Hooks\Hooks\Filter
+     * @return \Juzaweb\Hooks\Filter
      */
-    public function getFilter()
+    public function getFilter(): Filter
     {
         return $this->filter;
     }
@@ -50,12 +52,12 @@ class Events
     /**
      * Add an action.
      *
-     * @param string $hook      Hook name
+     * @param  string  $hook      Hook name
      * @param mixed  $callback  Function to execute
-     * @param int    $priority  Priority of the action
-     * @param int    $arguments Number of arguments to accept
+     * @param  int  $priority  Priority of the action
+     * @param  int  $arguments Number of arguments to accept
      */
-    public function addAction($hook, $callback, $priority = 20, $arguments = 1)
+    public function addAction(string $hook, mixed $callback, int $priority = 20, int $arguments = 1): void
     {
         $this->action->listen($hook, $callback, $priority, $arguments);
     }
@@ -63,11 +65,11 @@ class Events
     /**
      * Remove an action.
      *
-     * @param string $hook     Hook name
+     * @param  string  $hook     Hook name
      * @param mixed  $callback Function to execute
-     * @param int    $priority Priority of the action
+     * @param  int  $priority Priority of the action
      */
-    public function removeAction($hook, $callback, $priority = 20)
+    public function removeAction(string $hook, mixed $callback, int $priority = 20): void
     {
         $this->action->remove($hook, $callback, $priority);
     }
@@ -75,9 +77,9 @@ class Events
     /**
      * Remove all actions.
      *
-     * @param string $hook Hook name
+     * @param  string|null  $hook Hook name
      */
-    public function removeAllActions($hook = null)
+    public function removeAllActions(?string $hook = null): void
     {
         $this->action->removeAll($hook);
     }
@@ -85,12 +87,12 @@ class Events
     /**
      * Adds a filter.
      *
-     * @param string $hook      Hook name
+     * @param  string  $hook      Hook name
      * @param mixed  $callback  Function to execute
-     * @param int    $priority  Priority of the action
-     * @param int    $arguments Number of arguments to accept
+     * @param  int  $priority  Priority of the action
+     * @param  int  $arguments Number of arguments to accept
      */
-    public function addFilter($hook, $callback, $priority = 20, $arguments = 1)
+    public function addFilter(string $hook, mixed $callback, int $priority = 20, int $arguments = 1): void
     {
         $this->filter->listen($hook, $callback, $priority, $arguments);
     }
@@ -98,11 +100,11 @@ class Events
     /**
      * Remove a filter.
      *
-     * @param string $hook     Hook name
+     * @param  string  $hook     Hook name
      * @param mixed  $callback Function to execute
-     * @param int    $priority Priority of the action
+     * @param  int  $priority Priority of the action
      */
-    public function removeFilter($hook, $callback, $priority = 20)
+    public function removeFilter(string $hook, mixed $callback, int $priority = 20): void
     {
         $this->filter->remove($hook, $callback, $priority);
     }
@@ -110,9 +112,9 @@ class Events
     /**
      * Remove all filters.
      *
-     * @param string $hook Hook name
+     * @param  string|null  $hook Hook name
      */
-    public function removeAllFilters($hook = null)
+    public function removeAllFilters(string $hook = null): void
     {
         $this->filter->removeAll($hook);
     }
@@ -130,7 +132,7 @@ class Events
      *
      * @return void
      */
-    public function action()
+    public function action(): void
     {
         $args = func_get_args();
         $hook = $args[0];
@@ -151,9 +153,9 @@ class Events
      * @param mixed  $parameter1 A parameter
      * @param mixed  $parameter2 Another parameter
      *
-     * @return void
+     * @return mixed
      */
-    public function filter()
+    public function filter(): mixed
     {
         $args = func_get_args();
         $hook = $args[0];
@@ -162,8 +164,9 @@ class Events
 
         return $this->filter->fire($hook, $args);
     }
-    
-    public function allAction() {
+
+    public function allAction(): array
+    {
         return $this->action->getListeners();
     }
 }

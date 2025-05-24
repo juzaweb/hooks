@@ -1,20 +1,26 @@
 <?php
 
-namespace Tadcms\Hooks\Hooks;
+namespace Juzaweb\Hooks;
 
-use Opis\Closure\SerializableClosure;
+use Laravel\SerializableClosure\Exceptions\PhpVersionNotSupportedException;
+use Laravel\SerializableClosure\SerializableClosure;
 
 class HashedCallable
 {
     /**
      * @var \Closure
      */
-    protected $callback;
+    protected \Closure $callback;
 
     /**
      * @var string
      */
-    protected $signature;
+    protected string $signature;
+
+    /**
+     * @var string
+     */
+    protected string $id;
 
     /**
      * HashedCallable constructor.
@@ -29,9 +35,10 @@ class HashedCallable
     /**
      * Generate a unique signature for the callback.
      *
-     * @return string|void
+     * @return string
+     * @throws PhpVersionNotSupportedException
      */
-    protected function generateSignature()
+    protected function generateSignature(): string
     {
         return base64_encode(
             serialize(
@@ -42,9 +49,9 @@ class HashedCallable
 
     /**
      * Call the callback when the class is invoked
-     * @return mixed|void
+     * @return mixed
      */
-    public function __invoke()
+    public function __invoke(): mixed
     {
         return call_user_func_array($this->getCallback(), func_get_args());
     }
@@ -53,7 +60,7 @@ class HashedCallable
      * Gets the signature
      * @return string
      */
-    public function getSignature()
+    public function getSignature(): string
     {
         return $this->signature;
     }
@@ -62,7 +69,7 @@ class HashedCallable
      * Gets the callback
      * @return \Closure
      */
-    public function getCallback()
+    public function getCallback(): \Closure
     {
         return $this->callback;
     }
@@ -72,7 +79,7 @@ class HashedCallable
      * @param HashedCallable $callable
      * @return bool
      */
-    public function is(self $callable)
+    public function is(self $callable): bool
     {
         return $callable->getSignature() === $this->getSignature();
     }

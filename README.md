@@ -7,14 +7,6 @@ Add Actions and filters in Laravel like WordPress.
 composer require juzaweb/hooks
 ```
 
-If you're using Laravel 5.5 or later you can start using the package at this point. Eventy is auto-discovered by the Laravel framework.
-
-- For Laravel < 5.5
-Add the service provider to the providers array in your ``config/app.php``.
-```
-'Tadcms\Hooks\HooksServiceProvider',
-```
-
 ## Usage
 Anywhere in your code you can create a new action like so:
 ```
