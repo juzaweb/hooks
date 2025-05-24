@@ -14,7 +14,7 @@ do_action($tag, ...$args)
 ```
 
 ```
- * TAD CMS: Do action hook
+ * Do action hook
  * @param string $tag Action / Hook name (E.x: my.hook)
  * @param mixed ...$args Additional parameters to pass to the callback functions.
  * @return void
@@ -45,7 +45,7 @@ apply_filters($tag, $value, ...$args)
 ```
 
 ```
- * TAD CMS: Apply filters to value
+ * Apply filters to value
  * @param string $tag The name of the filter hook.
  * @param mixed  $value The value to filter.
  * @param mixed  ...$args Additional parameters to pass to the callback functions.
