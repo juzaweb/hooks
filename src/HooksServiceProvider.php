@@ -8,23 +8,15 @@ use Juzaweb\Hooks\Contracts\Hook;
 
 class HooksServiceProvider extends ServiceProvider
 {
-    public function register()
+    public function boot()
     {
-        // Registers the eventy singleton.
-        $this->app->singleton(
-            Hook::class,
-            function () {
-                return new HookRepository();
-            }
-        );
-
         /*
          * Adds a directive in Blade for actions
          */
         Blade::directive(
             'do_action',
             function ($expression) {
-                return "<?php app(Hook::class)->action({$expression}); ?>";
+                return "<?php app(\Juzaweb\Hooks\Contracts\Hook::class)->action({$expression}); ?>";
             }
         );
 
@@ -34,7 +26,18 @@ class HooksServiceProvider extends ServiceProvider
         Blade::directive(
             'apply_filters',
             function ($expression) {
-                return "<?php echo app(Hook::class)->filter({$expression}); ?>";
+                return "<?php echo app(\Juzaweb\Hooks\Contracts\Hook::class)->filter({$expression}); ?>";
+            }
+        );
+    }
+
+    public function register()
+    {
+        // Registers the eventy singleton.
+        $this->app->singleton(
+            Hook::class,
+            function () {
+                return new HookRepository();
             }
         );
     }
