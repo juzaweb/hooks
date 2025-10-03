@@ -1,6 +1,6 @@
 <?php
 
-use Juzaweb\Core\Facades\Hook;
+use Juzaweb\Hooks\Facades\Hook;
 
 if (!function_exists('do_action')) {
     /**
