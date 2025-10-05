@@ -6,7 +6,7 @@ use Juzaweb\Hooks\Abstracts\Event;
 
 class Filter extends Event
 {
-    protected string $value = '';
+    protected $value = '';
 
     /**
      * Filters a value.
@@ -14,10 +14,10 @@ class Filter extends Event
      * @param  string  $action  Name of filter
      * @param  array  $args  Arguments passed to the filter
      *
-     * @return string|null Always returns the value
+     * @return mixed Always returns the value
      * @throws \Exception
      */
-    public function fire(string $action, array $args): ?string
+    public function fire(string $action, array $args)
     {
         // get the value, the first argument is always the value
         $this->value = $args[0] ?? null;
